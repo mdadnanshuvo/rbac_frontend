@@ -8,6 +8,7 @@ import {
   BarChart2, FileText, ShieldCheck, MessageSquare,
   ChevronDown, LogOut, HelpCircle, Settings,
   Menu, X, Zap,
+  UserCircle2,
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth.store'
 import { usePermission } from '@/hooks/usePermission'
@@ -38,9 +39,14 @@ const MAIN_NAV: NavItem[] = [
   { label: 'Reports', href: '/reports', icon: <BarChart2 size={15} />, atom: 'page:reports' },
 ]
 
+
+
 const USERS_NAV: NavItem[] = [
   { label: 'Contacts', href: '/users',    icon: <Users size={15} />,         atom: 'page:users', badge: 0 },
   { label: 'Messages', href: '/messages', icon: <MessageSquare size={15} />, atom: 'page:dashboard', badge: 6 },
+  { label: 'Configuration',   href: '/permissions',      icon: <ShieldCheck size={15} />,  atom: 'action:permission.view' },
+  { label: 'Audit Log',       href: '/audit',            icon: <FileText size={15} />,     atom: 'page:audit' },
+  { label: 'Customer Portal', href: '/customer-portal',  icon: <UserCircle2 size={15} />,  atom: 'page:customer-portal' },
 ]
 
 const OTHER_NAV: NavItem[] = [
@@ -173,7 +179,7 @@ export default function Sidebar() {
             O
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-semibold text-gray-800 truncate">John's workspace</p>
+            <p className="text-xs font-semibold text-gray-800 truncate">Johns workspace</p>
             <p className="text-[10px] text-gray-400 truncate">#W1246483</p>
           </div>
           <ChevronDown size={13} className="text-gray-400 flex-shrink-0" />
